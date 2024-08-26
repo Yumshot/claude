@@ -60,3 +60,14 @@ Here's a list of 10 popular vacation spots that are often considered among the b
 10. Cape Town, South Africa - Beautiful coastal city with Table Mountain, wineries, and wildlife nearby
 
 Remember that the "best" vacation spots can vary depending on personal preferences, interests, and travel style.
+
+===
+### Question
+
+Hello Claude, I would like a list of the best colors for a house
+
+This Prompt will error
+
+### Response
+
+Possible Error with Prompt
