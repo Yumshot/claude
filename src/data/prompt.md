@@ -1,1 +1,1 @@
-Hello Claude, I would like a list of 10 pizza recipes.
+Hello Claude, I would like a list of 10 best vacations spots.
