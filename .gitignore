@@ -1,0 +1,4 @@
+/target
+.env
+src/data/cache/backlog.md
+src/data/likes.md
