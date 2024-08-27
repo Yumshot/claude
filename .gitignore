@@ -2,3 +2,6 @@
 .env
 src/data/cache/backlog.md
 src/data/likes.md
+src/data/backlog.md
+src/data/prompt.md
+src/data/response.md
