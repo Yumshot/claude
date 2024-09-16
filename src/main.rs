@@ -47,8 +47,6 @@ fn main() -> Result<(), Box<dyn Error>> {
         .arg(data.to_string()) // Convert Cow<'_, str> to String
         .output()?;
 
-    println!("{:?}", output);
-
     // Check if the command was successful
     if output.status.success() {
         // Get the response
