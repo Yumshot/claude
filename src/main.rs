@@ -11,7 +11,11 @@ fn main() -> Result<(), Box<dyn Error>> {
     dotenv().ok();
 
     // Read the content of prompt.md
-    let prompt_content = fs::read_to_string("src/data/prompt.md")?;
+    let prompt_content = fs::read_to_string("src/data/prompt.md")?
+        .replace("\n", " ") // Replace newlines with spaces
+        .replace("\r", " ") // Replace carriage returns with spaces (for Windows compatibility)
+        .trim() // Trim any leading or trailing whitespace
+        .to_string(); // Ensure the result is a String
 
     // Get API key from environment variable
     let api_key = env::var("ANTHROPIC_API_KEY").expect("ANTHROPIC_API_KEY not set in .env file");
@@ -43,6 +47,8 @@ fn main() -> Result<(), Box<dyn Error>> {
         .arg(data.to_string()) // Convert Cow<'_, str> to String
         .output()?;
 
+    println!("{:?}", output);
+
     // Check if the command was successful
     if output.status.success() {
         // Get the response
@@ -64,8 +70,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         // Format the content into a Markdown format without breaking existing structure
         let formatted_response = format!(
             "### Question\n\n{}\n\n### Response\n\n{}",
-            prompt_content,
-            response_text
+            prompt_content, response_text
         );
 
         // Paths to the files
